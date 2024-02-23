@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+</head>
+<body>
+<h1>Search Results</h1>
+<div th:if="${book}">
+  <p th:text="'Book Name: ' + ${book.name}"></p>
+  <p th:text="'Author: ' + ${book.author}"></p>
+  <p th:text="'Year: ' + ${book.year}"></p>
+  <!-- Add more fields as needed -->
+</div>
+<div th:unless="${book}">
+  <p>No book found with the given name.</p>
+</div>
+<!-- Add a link/button to go back to the main page or perform another search -->
+<a href="/books">Back to Main Page</a>
+</body>
+</html>
